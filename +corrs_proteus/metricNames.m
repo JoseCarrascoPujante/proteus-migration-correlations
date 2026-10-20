@@ -1,0 +1,6 @@
+function names = metricNames()
+%metricNames  Identifiers of the eleven metrics, in the column order of results.mat.
+    names = {'RMSF_alpha', 'RMSF_correlation_time', 'DFA_gamma', 'MSD_beta', 'ApEn', ...
+             'IR', 'DR', 'AS', ...
+             'C_theta_v', 't_theta', 'AC_v1'};
+end

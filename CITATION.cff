@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the article and this repository."
+title: "Systemic and kinematic properties of Amoeba proteus migration correlate strongly across environments: code and data"
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/JoseCarrascoPujante/proteus-migration-correlations/releases/tag/bioRxiv"
+authors:
+  - family-names: "Carrasco-Pujante"
+    given-names: "José"
+  - family-names: "Malaina"
+    given-names: "Iker"
+  - family-names: "Pérez-Yarza"
+    given-names: "Gorka"
+  - family-names: "Camino-Pontes"
+    given-names: "Borja"
+  - family-names: "Cortés"
+    given-names: "Jesús M."
+  - family-names: "López"
+    given-names: "José I."
+  - family-names: "De la Fuente"
+    given-names: "Ildefonso M."
+preferred-citation:
+  type: article
+  title: "Systemic and kinematic properties of Amoeba proteus migration correlate strongly across environments"
+  authors:
+    - family-names: "Carrasco-Pujante"
+      given-names: "José"
+    - family-names: "Malaina"
+      given-names: "Iker"
+    - family-names: "Pérez-Yarza"
+      given-names: "Gorka"
+    - family-names: "Camino-Pontes"
+      given-names: "Borja"
+    - family-names: "Cortés"
+      given-names: "Jesús M."
+    - family-names: "López"
+      given-names: "José I."
+    - family-names: "De la Fuente"
+      given-names: "Ildefonso M."
+  year: 2026

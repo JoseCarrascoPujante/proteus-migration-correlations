@@ -1,0 +1,13 @@
+Model,Condition,TotalBorda,MeanAkaikeWeight
+power1,Chemotaxis,23,0.343690111372864
+exp1,Chemotaxis,17,0.260540482261001
+log,Chemotaxis,16,0.292092225141504
+poly1,Chemotaxis,16,0.103677181224631
+exp1,Galvanotaxis,22,0.32053068860737
+power1,Galvanotaxis,22,0.323463228913055
+poly1,Galvanotaxis,17,0.148911794876517
+log,Galvanotaxis,11,0.207094287603058
+exp1,NoStimuli,30,0.387980816332798
+power1,NoStimuli,19,0.250939079277204
+poly1,NoStimuli,18,0.239755930408595
+log,NoStimuli,5,0.121324173981402

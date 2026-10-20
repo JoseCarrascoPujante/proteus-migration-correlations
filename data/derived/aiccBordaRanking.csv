@@ -1,0 +1,5 @@
+Rank,Model,MeanBordaPerContest,ContestsEntered,TotalBorda,FirstPlaces,MeanDeltaAICc,MeanAkaikeWeight,MeanRank
+1,exp1,1.917,36,69,22,1.848,0.323,2.083
+2,power1,1.778,36,64,2,1.228,0.306,2.222
+3,poly1,1.417,36,51,3,4.109,0.164,2.583
+4,log,0.889,36,32,9,3.896,0.207,3.111
