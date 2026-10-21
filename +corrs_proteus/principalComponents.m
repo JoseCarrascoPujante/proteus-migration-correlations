@@ -1,5 +1,5 @@
 function [metricsTable, componentsTable, prTable] = principalComponents(results)
-%principalComponents  Fig S7: principal component analysis (MATLAB pca) of the eleven metrics, z-scored over
+%principalComponents  Principal component analysis (MATLAB pca) of the eleven metrics, z-scored over
 %   the 150 cells pooled over the scenarios, on their correlation matrix. Writes to data/derived/
 %     pcaComponents.csv       variance explained by every component (%)
 %     pcaMetrics.csv          loadings of every metric on the first three components, and its contribution to
@@ -14,7 +14,7 @@ function [metricsTable, componentsTable, prTable] = principalComponents(results)
     derivedDir = fullfile(fileparts(fileparts(mfilename('fullpath'))), 'data', 'derived');
     names = string(corrs_proteus.metricNames())';
     conds = fieldnames(results);
-    nPC = 3;                                        % components summarized by the contribution (Methods)
+    nPC = 3;                                        % components summarized by the contribution
 
     pooled = cell2mat(cellfun(@(c) results.(c), conds, 'UniformOutput', false));
     [coeff, ~, ~, ~, explained] = pca(zscore(pooled));

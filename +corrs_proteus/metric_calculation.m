@@ -41,8 +41,8 @@ function results = metric_calculation(coordinates, destination_folder)
             distTrav = sum(d);
             row(7) = row(6)/distTrav;
 
-            % AS = path length over the duration of the recording, 3,600 frames of 0.5 s (Methods, Track
-            % recording and digitizing), the T of the identity IR = DR*AS*T; x 1000 for mm to um.
+            % AS = path length over the duration of the recording, 3,600 frames of 0.5 s,
+            % the T of the identity IR = DR*AS*T; x 1000 for mm to um.
             row(8) = distTrav*1000/(numel(xj)*0.5);
 
             row(9)  = corrs_proteus.coupling_theta_v(xj, yj, dtMemory);

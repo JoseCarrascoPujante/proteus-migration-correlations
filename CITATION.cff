@@ -3,7 +3,7 @@ message: "If you use this code or data, please cite the article and this reposit
 title: "Systemic and kinematic properties of Amoeba proteus migration correlate strongly across environments: code and data"
 version: 1.0.0
 license: MIT
-repository-code: "https://github.com/JoseCarrascoPujante/proteus-migration-correlations/releases/tag/bioRxiv"
+repository-code: "https://github.com/JoseCarrascoPujante/proteus-migration-correlations"
 authors:
   - family-names: "Carrasco-Pujante"
     given-names: "José"

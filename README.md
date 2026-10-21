@@ -24,23 +24,23 @@ position, in mm, of each of the 50 cells every 0.5 s for 30 min, relative to its
 
 From this folder, in MATLAB, run `main` (about 5 min with two parallel workers). The functions are in the MATLAB namespace folder `+corrs_proteus/` and are called as `corrs_proteus.<function>`; only this folder's parent needs to be on the path, which `main` sets. The results are written to `data/derived/`, where the repository already holds those of the run behind the article:
 
-| Step | Output | In the article |
+| Step | Output | Content |
 |---|---|---|
 | 1 to 3 | `results.mat`, `lillieforsTests.mat` | The eleven metrics; normality tests |
-| 4 | `pairwiseDependence.csv` | Table S13 |
-| 5 | `stimulusEffectSizes.csv` | Table S12 |
-| 6 | `dependenceContrasts.csv` | Table S15 |
+| 4 | `pairwiseDependence.csv` | Dependence test of the 55 metric pairs in each scenario |
+| 5 | `stimulusEffectSizes.csv` | Effect of the stimuli on each metric |
+| 6 | `dependenceContrasts.csv` | Between-scenario contrasts of the dependences |
 | 7 to 9 | `GoodnessOfFitResults.mat` and `.xlsx`, `aicBorda_*.csv`, `perContestDecision_exp1.csv` | Candidate forms and their AICc ranking |
-| 10 | `table1_modeledCouplings.csv` | Table 1 |
-| 11 | `aiccBordaRanking.csv` | Table S14 |
-| 12 | `perTrajectory_<metric>.csv` | Tables S1 to S11 |
-| 13 | Printed in the command window | Departure of DFA γ from β/2 + 1 (Results) |
-| 14 | Printed in the command window | Robustness of the every-frame metrics (Materials and Methods) |
-| 15 | Printed in the command window | Side of the net displacement of every cell (Results) |
-| 16 | Printed in the command window | Speed memory against temporally independent speeds (Results) |
-| 17 | `samplingIntervalSweep.csv` | Fig S4 and the values the Results quote from it |
-| 18 | `pcaComponents.csv`, `pcaMetrics.csv`, `participationRatio.csv` | Fig S7 |
-| 19 | `dependenceDendrogram.csv` | Fig S8 |
+| 10 | `couplingStrength.csv` | Strength and direction of the six couplings |
+| 11 | `aiccBordaRanking.csv` | Borda count of the AICc rankings of the candidate forms |
+| 12 | `perTrajectory_<metric>.csv` | Value of each metric in every cell |
+| 13 | Printed in the command window | Departure of DFA γ from β/2 + 1 |
+| 14 | Printed in the command window | Robustness of the every-frame metrics to the zero-length steps |
+| 15 | Printed in the command window | Side of the net displacement of every cell |
+| 16 | Printed in the command window | Speed memory against temporally independent speeds |
+| 17 | `samplingIntervalSweep.csv` | The subsampled metrics and their dependences at every sampling interval |
+| 18 | `pcaComponents.csv`, `pcaMetrics.csv`, `participationRatio.csv` | Principal component analysis of the metrics |
+| 19 | `dependenceDendrogram.csv` | Dendrogram of the metrics by their dependence |
 | 20 | `twolines_check.csv` | Two-lines test |
 
 The permutation tests and bootstrap resamples use fixed seeds, so every run gives the same results.

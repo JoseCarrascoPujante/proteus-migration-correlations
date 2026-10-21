@@ -50,7 +50,7 @@ function T = stimulusEffectSizes()
     % The intervals are drawn after the Benjamini-Hochberg selection, at the level 1 - R*qLevel/m that bounds
     % the false coverage rate of the R contrasts declared significant among the m tested by qLevel
     % (Benjamini & Yekutieli 2005, doi:10.1198/016214504000001907); the bootstrap draws are those above.
-    % Here 12 of the 33 contrasts have q < 0.05, so the level is 98.2% (Materials and Methods, Cliff's delta).
+    % Here 12 of the 33 contrasts have q < 0.05, so the level is 98.2%.
     alphaCI = sum(qMW < qLevel) * qLevel / numel(qMW);
     for r = 1:numel(qMW)
         [dLo(r), dHi(r)] = bcaLimits(boot(:,r), z0(r), acc(r), alphaCI);

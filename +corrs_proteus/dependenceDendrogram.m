@@ -1,5 +1,5 @@
 function Z = dependenceDendrogram(results)
-%dependenceDendrogram  Fig S8: average-linkage tree (UPGMA, Sokal & Michener 1958; MATLAB linkage) of the
+%dependenceDendrogram  Average-linkage tree (UPGMA, Sokal & Michener 1958; MATLAB linkage) of the
 %   eleven metrics on d = 1 - max(R*_n, 0), with R*_n the bias-corrected squared distance correlation of
 %   the pair averaged over the three scenarios. Writes data/derived/dependenceDendrogram.csv with one row per
 %   merge, as linkage returns it: the two clusters joined (metrics 1 to 11 in the order of metricNames, and

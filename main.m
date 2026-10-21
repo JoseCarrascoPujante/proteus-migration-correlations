@@ -37,8 +37,8 @@ resOLS = corrs_proteus.aicBordaRanking();
 %% 9. AICc ranks and parameters of every contest
 summaryOLS = corrs_proteus.perContestDecisionSummary(resOLS, modelFitResults);
 
-%% 10. Table 1
-Table1 = corrs_proteus.table1_modeledCouplings();
+%% 10. Strength and direction of the six couplings
+couplings = corrs_proteus.couplingStrength();
 
 %% 11. AICc Borda ranking of the candidate forms
 corrs_proteus.aiccBordaRankingTable();
@@ -46,7 +46,7 @@ corrs_proteus.aiccBordaRankingTable();
 %% 12. Value of each metric in every cell
 corrs_proteus.perTrajectoryMetrics();
 
-%% 13. Departure of DFA gamma from the self-similar value beta/2 + 1 (Results, Fig 3)
+%% 13. Departure of DFA gamma from the self-similar value beta/2 + 1
 iGamma = find(strcmp(corrs_proteus.metricNames(), 'DFA_gamma'));
 iBeta = find(strcmp(corrs_proteus.metricNames(), 'MSD_beta'));
 for cond = string(fieldnames(results))'
@@ -56,7 +56,7 @@ for cond = string(fieldnames(results))'
         cond, median(departure), iqr(M(:, iGamma)));
 end
 
-%% 14. Robustness of the every-frame metrics to the zero-length steps (Materials and Methods)
+%% 14. Robustness of the every-frame metrics to the zero-length steps
 % Manual tracking records the clicked pixel, so a cell that moves less than one pixel between frames leaves a
 % zero-length step (Gorelik & Gautreau 2014, doi:10.1038/nprot.2014.131). The path length behind DR and AS,
 % and the RMSF exponent, are recomputed from the positions at the resolved interval, where steps are almost
@@ -84,7 +84,7 @@ for cond = string(fieldnames(coordinates))'
         dc(alphaRes, M(:, col("AC_v1"))), dc(M(:, col("RMSF_alpha")), M(:, col("AC_v1"))));
 end
 
-%% 15. Side of the net displacement (Results)
+%% 15. Side of the net displacement
 % The cathode lies to the right (+x) in the galvanotaxis set-up, and the nFMLP was added on the left (-x) in the
 % chemotaxis set-up; each cell is counted on the side toward which its final position lies from its initial one.
 for cond = string(fieldnames(coordinates))'
@@ -93,7 +93,7 @@ for cond = string(fieldnames(coordinates))'
         cond, nnz(netX > 0), nnz(netX < 0), numel(netX));
 end
 
-%% 16. Speed memory against temporally independent speeds (Results)
+%% 16. Speed memory against temporally independent speeds
 % For n independent values the lag-one sample autocorrelation is approximately normal with mean 0 and variance
 % 1/n (Brockwell & Davis 2016, Section 1.6, doi:10.1007/978-3-319-29854-2), so its two-sided 95% bound is the
 % 0.975 normal quantile over sqrt(n), n being the number of speeds of each track at the resolved interval.
@@ -103,9 +103,9 @@ acv = cell2mat(cellfun(@(c) results.(c)(:, col("AC_v1")), conds, 'UniformOutput'
 fprintf('AC_v(1) from %.3f to %.3f over the %d cells; 95%% bound for independent speeds over %d steps: +/-%.3f\n', ...
     min(acv), max(acv), numel(acv), nSpeeds, norminv(0.975) / sqrt(nSpeeds));
 
-%% 17. Sampling-interval sweep (Fig S4)
+%% 17. Sampling-interval sweep
 sweep = corrs_proteus.samplingIntervalSweep(coordinates, results);
-% The values the Results quote: R*_n of AC_v(1) with RMSF alpha from the resolved interval to 60 s, the R*_n of
+% The values the article quotes: R*_n of AC_v(1) with RMSF alpha from the resolved interval to 60 s, the R*_n of
 % t_theta at the intervals of 15 s and longer, and that of t_theta with AS at any interval.
 kLong = round(max(sweep.dt_s) / 0.5);          % positions are recorded every 0.5 s
 fprintf('Steps per track: %d at %.1f s, %d at %.0f s\n', nSpeeds, kRes * 0.5, ...
@@ -121,11 +121,11 @@ for cond = string(conds)'
         max(S.bcDcor_t_theta_AS));
 end
 
-%% 18. Principal component analysis of the metrics (Fig S7)
+%% 18. Principal component analysis of the metrics
 [~, ~, prTable] = corrs_proteus.principalComponents(results);
 fprintf('Participation ratio: %s\n', strjoin(compose("%s %.2f", prTable.Scope, prTable.ParticipationRatio), ', '));
 
-%% 19. Dendrogram of the metrics by their dependence (Fig S8)
+%% 19. Dendrogram of the metrics by their dependence
 corrs_proteus.dependenceDendrogram(results);
 
 %% 20. Two-lines U-shape test (R)

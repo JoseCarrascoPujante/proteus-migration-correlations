@@ -1,5 +1,5 @@
 function T = samplingIntervalSweep(coordinates, results)
-%samplingIntervalSweep  Fig S4: the four metrics computed at the resolved interval, and the dependences
+%samplingIntervalSweep  The four metrics computed at the resolved interval, and the dependences
 %   involving them on which the paper draws conclusions, at every sampling interval from 0.5 to 60 s.
 %   Only ApEn, AC_v(1), t_theta and C_theta-v have an interval to choose, so only they are swept. For every
 %   interval Dt and scenario, T holds the 25th, 50th and 75th percentiles over the cells of each of the four
